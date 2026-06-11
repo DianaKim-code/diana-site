@@ -248,10 +248,11 @@
 
     const modal = document.querySelector('[data-modal]');
     const leadForm = document.querySelector('[data-lead-form]');
+    const leadModalStorageKey = 'leadModalShownAtBottomV2';
     let leadModalShown = false;
     function hasLeadModalShown() {
       try {
-        return sessionStorage.getItem('leadModalShown') === 'true';
+        return sessionStorage.getItem(leadModalStorageKey) === 'true';
       } catch (error) {
         return leadModalShown;
       }
@@ -259,7 +260,7 @@
     function markLeadModalShown() {
       leadModalShown = true;
       try {
-        sessionStorage.setItem('leadModalShown', 'true');
+        sessionStorage.setItem(leadModalStorageKey, 'true');
       } catch (error) {
         return;
       }
