@@ -270,15 +270,18 @@
         markLeadModalShown();
       }
     };
+    let leadModalWatcher = null;
     function handleLeadModalScroll() {
       const scrollBottom = window.scrollY + window.innerHeight;
       const pageBottom = document.documentElement.scrollHeight - 80;
       if (scrollBottom >= pageBottom) {
         showModal();
         window.removeEventListener('scroll', handleLeadModalScroll);
+        if (leadModalWatcher) clearInterval(leadModalWatcher);
       }
     }
     window.addEventListener('scroll', handleLeadModalScroll, { passive: true });
+    leadModalWatcher = setInterval(handleLeadModalScroll, 500);
     handleLeadModalScroll();
     document.querySelectorAll('[data-close-modal]').forEach((item) => {
       item.addEventListener('click', () => modal.hidden = true);
