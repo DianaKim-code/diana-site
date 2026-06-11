@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Диана Ким - психолог в Кызылорде и онлайн, трансформационный коуч по доходу. Работа с денежными блоками, финансовой идентичностью и ограничивающими убеждениями.">
+  <meta name="description" content="Диана Ким - психолог в Кызылорде и онлайн, трансформационный коуч. Работа с денежными блоками, финансовой идентичностью и ограничивающими убеждениями.">
   <meta name="keywords" content="психолог Кызылорда, психолог онлайн, денежные блоки, финансовая идентичность, коуч по доходу, работа с ограничивающими убеждениями">
-  <meta property="og:title" content="Диана Ким | Психолог и коуч по доходу">
+  <meta property="og:title" content="Диана Ким | Психолог и трансформационный коуч">
   <meta property="og:description" content="Диагностика внутренних ограничений, которые мешают проявляться, зарабатывать и удерживать деньги.">
   <meta property="og:type" content="website">
   <title>Диана Ким | Психолог Кызылорда и онлайн</title>
@@ -33,7 +33,7 @@
   <header class="site-header">
     <a class="brand" href="#top">
       <span>Диана Ким</span>
-      <small>психолог • коуч по доходу</small>
+      <small>психолог • трансформационный коуч</small>
     </a>
     <nav class="nav" aria-label="Навигация">
       <a href="#diagnost">AI-диагност</a>
@@ -254,10 +254,16 @@
         sessionStorage.setItem('leadModalShown', 'true');
       }
     };
-    setTimeout(showModal, 7000);
-    document.addEventListener('mouseleave', (event) => {
-      if (event.clientY <= 0) showModal();
-    });
+    function handleLeadModalScroll() {
+      const scrollBottom = window.scrollY + window.innerHeight;
+      const pageBottom = document.documentElement.scrollHeight - 80;
+      if (scrollBottom >= pageBottom) {
+        showModal();
+        window.removeEventListener('scroll', handleLeadModalScroll);
+      }
+    }
+    window.addEventListener('scroll', handleLeadModalScroll, { passive: true });
+    handleLeadModalScroll();
     document.querySelectorAll('[data-close-modal]').forEach((item) => {
       item.addEventListener('click', () => modal.hidden = true);
     });
