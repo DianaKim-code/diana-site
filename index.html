@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Диана Ким - психолог в Кызылорде и онлайн, трансформационный коуч. Работа с денежными блоками, финансовой идентичностью и ограничивающими убеждениями.">
-  <meta name="keywords" content="психолог Кызылорда, психолог онлайн, денежные блоки, финансовая идентичность, коуч по доходу, работа с ограничивающими убеждениями">
+  <meta name="keywords" content="психолог Кызылорда, психолог онлайн, денежные блоки, финансовая идентичность, трансформационный коуч, работа с ограничивающими убеждениями">
   <meta property="og:title" content="Диана Ким | Психолог и трансформационный коуч">
   <meta property="og:description" content="Диагностика внутренних ограничений, которые мешают проявляться, зарабатывать и удерживать деньги.">
   <meta property="og:type" content="website">
@@ -196,7 +196,9 @@
     </section>
 
     <section class="section about reveal">
-      <div class="portrait" role="img" aria-label="Диана Ким"><span>DK</span></div>
+      <figure class="portrait">
+        <img src="diana-kim.jpg" alt="Диана Ким, психолог и трансформационный коуч" loading="lazy">
+      </figure>
       <div>
         <p class="eyebrow">Обо мне</p>
         <h2>Диана Ким</h2>
@@ -248,7 +250,7 @@
 
     const modal = document.querySelector('[data-modal]');
     const leadForm = document.querySelector('[data-lead-form]');
-    const leadModalStorageKey = 'leadModalShownAtBottomV2';
+    const leadModalStorageKey = 'leadModalShownAtBottomV3';
     let leadModalShown = false;
     function hasLeadModalShown() {
       try {
@@ -271,19 +273,16 @@
         markLeadModalShown();
       }
     };
-    let leadModalWatcher = null;
     function handleLeadModalScroll() {
+      if (window.scrollY < 200) return;
       const scrollBottom = window.scrollY + window.innerHeight;
       const pageBottom = document.documentElement.scrollHeight - 80;
       if (scrollBottom >= pageBottom) {
         showModal();
         window.removeEventListener('scroll', handleLeadModalScroll);
-        if (leadModalWatcher) clearInterval(leadModalWatcher);
       }
     }
     window.addEventListener('scroll', handleLeadModalScroll, { passive: true });
-    leadModalWatcher = setInterval(handleLeadModalScroll, 500);
-    handleLeadModalScroll();
     document.querySelectorAll('[data-close-modal]').forEach((item) => {
       item.addEventListener('click', () => modal.hidden = true);
     });
