@@ -248,10 +248,26 @@
 
     const modal = document.querySelector('[data-modal]');
     const leadForm = document.querySelector('[data-lead-form]');
-    const showModal = () => {
-      if (!sessionStorage.getItem('leadModalShown')) {
-        modal.hidden = false;
+    let leadModalShown = false;
+    function hasLeadModalShown() {
+      try {
+        return sessionStorage.getItem('leadModalShown') === 'true';
+      } catch (error) {
+        return leadModalShown;
+      }
+    }
+    function markLeadModalShown() {
+      leadModalShown = true;
+      try {
         sessionStorage.setItem('leadModalShown', 'true');
+      } catch (error) {
+        return;
+      }
+    }
+    const showModal = () => {
+      if (!hasLeadModalShown()) {
+        modal.hidden = false;
+        markLeadModalShown();
       }
     };
     function handleLeadModalScroll() {
