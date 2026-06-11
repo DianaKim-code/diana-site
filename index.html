@@ -188,10 +188,10 @@
         <h2>Выберите формат, с которого вам спокойно начать.</h2>
       </div>
       <div class="format-grid">
-        <article class="format-card"><h3>Диагностика</h3><p>Определяем главный ограничитель дохода и точку старта.</p><a class="btn btn-small js-wa" href="https://wa.me/77774563866">WhatsApp</a></article>
-        <article class="format-card featured"><h3>Долгосрочное сопровождение</h3><p>Глубокая работа с мышлением, психикой и телом для устойчивого роста.</p><a class="btn btn-small js-wa" href="https://wa.me/77774563866">WhatsApp</a></article>
-        <article class="format-card"><h3>Индивидуальная консультация</h3><p>Точечная работа с запросом, страхом, ценой или проявленностью.</p><a class="btn btn-small js-wa" href="https://wa.me/77774563866">WhatsApp</a></article>
-        <article class="format-card"><h3>Трансформационная игра</h3><p>Бережно увидеть скрытые сценарии и новые решения.</p><a class="btn btn-small js-wa" href="https://wa.me/77774563866">WhatsApp</a></article>
+        <article class="format-card"><h3>Диагностика</h3><p>Определяем главный ограничитель дохода и точку старта.</p><a class="btn btn-small js-wa" href="https://wa.me/77774563866" data-wa-message="Здравствуйте, Диана. Хочу пройти диагностику.">WhatsApp</a></article>
+        <article class="format-card featured"><h3>Долгосрочное сопровождение</h3><p>Глубокая работа с мышлением, психикой и телом для устойчивого роста.</p><a class="btn btn-small js-wa" href="https://wa.me/77774563866" data-wa-message="Здравствуйте, Диана. Хочу узнать про долгосрочное сопровождение.">WhatsApp</a></article>
+        <article class="format-card"><h3>Индивидуальная консультация</h3><p>Точечная работа с запросом, страхом, ценой или проявленностью.</p><a class="btn btn-small js-wa" href="https://wa.me/77774563866" data-wa-message="Здравствуйте, Диана. Хочу записаться на индивидуальную консультацию.">WhatsApp</a></article>
+        <article class="format-card"><h3>Трансформационная игра</h3><p>Бережно увидеть скрытые сценарии и новые решения.</p><a class="btn btn-small js-wa" href="https://wa.me/77774563866" data-wa-message="Здравствуйте, Диана. Хочу записаться на трансформационную игру.">WhatsApp</a></article>
       </div>
     </section>
 
@@ -235,7 +235,9 @@
     const WA_URL = 'https://wa.me/77774563866?text=' + encodeURIComponent('Здравствуйте, Диана.\nХочу пройти диагностику.');
 
     document.querySelectorAll('.js-wa').forEach((link) => {
-      link.href = WA_URL;
+      link.href = link.dataset.waMessage
+        ? 'https://wa.me/77774563866?text=' + encodeURIComponent(link.dataset.waMessage)
+        : WA_URL;
     });
 
     const revealObserver = new IntersectionObserver((entries) => {
