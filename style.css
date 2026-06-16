@@ -774,6 +774,231 @@ input:focus {
   font-weight: 800;
 }
 
+.razbor-page .hero {
+  min-height: calc(100vh - 76px);
+}
+
+.razbor-hero {
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.7fr);
+}
+
+.razbor-hero p:not(.eyebrow):not(.hero-subtitle) {
+  max-width: 650px;
+}
+
+.service-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 0 18px;
+  border: 1px solid rgba(168,125,117,0.32);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.62);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.razbor-hero-card {
+  display: grid;
+  gap: 18px;
+  min-height: 480px;
+  padding: clamp(26px, 5vw, 46px);
+  place-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(81,66,59,0.92), rgba(168,125,117,0.84)),
+    var(--cream);
+  box-shadow: var(--shadow);
+}
+
+.razbor-hero-card span {
+  display: block;
+  width: min(260px, 100%);
+  padding: 18px 20px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  color: var(--milk);
+  background: rgba(255,255,255,0.1);
+  font-family: Georgia, serif;
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1;
+  text-align: center;
+}
+
+.soft-list,
+.request-grid,
+.steps-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.soft-list {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.soft-list article,
+.request-grid article,
+.steps-grid article,
+.check-panel,
+.narrow-card,
+.price-card,
+.copy-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 16px 46px rgba(67,54,45,0.08);
+}
+
+.soft-list article {
+  padding: 22px;
+  color: var(--muted);
+}
+
+.request-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.request-grid article {
+  min-height: 250px;
+  padding: 28px;
+}
+
+.request-grid h3,
+.price-card h3,
+.steps-grid h3 {
+  font-family: Georgia, serif;
+  font-size: 27px;
+}
+
+.check-panel,
+.narrow-card,
+.copy-card {
+  padding: clamp(24px, 5vw, 42px);
+}
+
+.check-panel p,
+.price-includes p {
+  margin-top: 0;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.check-panel ul,
+.price-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.check-panel li,
+.price-card li {
+  margin: 8px 0;
+}
+
+.muted-panel {
+  background: linear-gradient(135deg, rgba(255,255,255,0.78), rgba(241,231,219,0.82));
+}
+
+.narrow-card {
+  width: min(880px, 100%);
+  margin: 0 auto;
+}
+
+.price-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(24px, 5vw, 50px);
+  padding: clamp(26px, 5vw, 48px);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.76), rgba(241,231,219,0.72)),
+    var(--white);
+}
+
+.price-card h3 {
+  margin-bottom: 18px;
+  font-size: clamp(32px, 5vw, 48px);
+}
+
+.price-actions,
+.center-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.note,
+.copy-note {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.steps-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.steps-grid article {
+  padding: 28px;
+}
+
+.steps-grid span {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 22px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--ink);
+  font-weight: 800;
+}
+
+.center-actions {
+  justify-content: center;
+}
+
+.copy-card {
+  display: grid;
+  gap: 22px;
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.copy-card ol {
+  margin: 0;
+  padding-left: 24px;
+  color: var(--muted);
+}
+
+.copy-card li {
+  margin: 8px 0;
+}
+
+.copy-note {
+  min-height: 23px;
+  color: var(--sage);
+  font-weight: 800;
+}
+
+.razbor-page .final-cta p {
+  max-width: 680px;
+  margin: 0;
+  color: rgba(255,255,255,0.82);
+}
+
+.razbor-page .final-cta .hero-actions {
+  justify-content: center;
+  margin-top: 0;
+}
+
+.razbor-page .final-cta .btn-ghost {
+  color: var(--milk);
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.28);
+}
+
 html.js .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -792,7 +1017,9 @@ html.js .reveal.is-visible {
 
   .hero,
   .split,
-  .about {
+  .about,
+  .razbor-hero,
+  .price-card {
     grid-template-columns: 1fr;
   }
 
@@ -810,8 +1037,14 @@ html.js .reveal.is-visible {
   .case-grid,
   .reviews,
   .format-grid,
-  .trust-stats {
+  .trust-stats,
+  .request-grid,
+  .steps-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .razbor-hero-card {
+    min-height: 340px;
   }
 }
 
@@ -857,8 +1090,33 @@ html.js .reveal.is-visible {
   .case-grid,
   .reviews,
   .format-grid,
-  .trust-stats {
+  .trust-stats,
+  .soft-list,
+  .request-grid,
+  .steps-grid,
+  .price-actions {
     grid-template-columns: 1fr;
+  }
+
+  .soft-list,
+  .request-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .razbor-hero-card {
+    min-height: 260px;
+  }
+
+  .razbor-hero-card span {
+    width: 100%;
+    font-size: 26px;
+  }
+
+  .service-pill {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .btn,
