@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ассистент Дианы</title>
+    <meta
+      name="description"
+      content="Бережная интерактивная страница-заявка для выбора направления работы с Дианой."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Бережная навигация</p>
+        <h1 id="page-title">Ассистент Дианы</h1>
+        <p class="hero__lead">
+          Бережно выберите направление, с которым хотите обратиться. Ассистент поможет
+          прояснить запрос и передать Диане уже более точную заявку.
+        </p>
+        <p class="hero__note">Это займет несколько минут. На каждом шаге будет только один вопрос.</p>
+      </section>
+
+      <section class="assistant-panel" aria-live="polite">
+        <div class="progress-wrap">
+          <div class="progress-top">
+            <span id="step-label">Шаг 1 из 1</span>
+            <button class="link-button hidden" type="button" id="change-direction">
+              Выбрать другое направление
+            </button>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <span id="progress-bar"></span>
+          </div>
+        </div>
+
+        <div class="quiz-card" id="quiz-card">
+          <p class="kicker" id="card-kicker">Ассистент</p>
+          <h2 id="question-title">Здравствуйте 🤍</h2>
+          <div class="body-text" id="question-text"></div>
+          <div class="notice hidden" id="safety-notice"></div>
+          <div class="options-grid" id="options"></div>
+          <div class="fields" id="fields"></div>
+          <div class="form-status hidden" id="form-status"></div>
+        </div>
+
+        <div class="navigation">
+          <button class="ghost-button" type="button" id="back-button">Назад</button>
+          <button class="primary-button hidden" type="button" id="next-button">Продолжить</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
