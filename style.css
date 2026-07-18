@@ -700,6 +700,48 @@ input:focus {
   border-color: #276554;
 }
 
+.hero-route-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(119, 109, 102, 0.26);
+  transition: color 0.22s ease, border-color 0.22s ease;
+}
+
+.hero-route-link:hover,
+.mini-link:hover,
+.card-text-link:hover {
+  color: var(--ink);
+  border-color: rgba(52, 45, 41, 0.42);
+}
+
+.mini-link,
+.card-text-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 14px;
+  color: var(--rose);
+  font-size: 13px;
+  font-weight: 800;
+  border-bottom: 1px solid rgba(168, 125, 117, 0.28);
+}
+
+.card-text-link {
+  margin-top: 12px;
+  color: rgba(255,255,255,0.86);
+  border-color: rgba(255,255,255,0.26);
+}
+
+.card-text-link:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.72);
+}
+
 .program-bridge {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
@@ -785,6 +827,27 @@ input:focus {
 .final-program-link:hover {
   color: #fff;
   border-color: #fff;
+}
+
+.final-secondary-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 22px;
+  margin-top: -8px;
+}
+
+.final-secondary-links a {
+  color: rgba(255,255,255,0.78);
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,255,255,0.24);
+  transition: color 0.22s ease, border-color 0.22s ease;
+}
+
+.final-secondary-links a:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.74);
 }
 
 .footer {
