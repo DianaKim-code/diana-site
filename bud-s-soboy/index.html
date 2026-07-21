@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#031917">
+  <meta name="description" content="«Будь с собой» — 60 карт терапевтического сопровождения: мягкие фразы, честные вопросы и практики, которые дают опору.">
+  <title>Колода «Будь с собой» — интерактивная карта</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bud-s-soboy.css">
+  <script src="bud-s-soboy.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Будь с собой — на главную">
+        <span class="brand-mark" aria-hidden="true">Б</span>
+        <span><strong>Будь с собой</strong><small>интерактивная карта</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span><span class="sr-only">Открыть меню</span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+        <a href="#about">О колоде</a><a href="#card-draw">Вытянуть карту</a><a href="#how">Как пользоваться</a><a href="#full-deck">Полная колода</a><a href="#contacts">Контакты</a>
+      </nav>
+      <a class="button button-small header-cta" href="#card-draw">Вытянуть карту</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Диана Ким</p>
+          <h1 id="hero-title"><em>Будь с собой</em></h1>
+          <p class="hero-kicker">Колода терапевтического сопровождения</p>
+          <p class="hero-lead">60 карт терапевтического сопровождения: мягкие фразы, честные вопросы и практики, которые дают опору.</p>
+          <p class="hero-quote">Мягкость — это сила. Честность — это выбор.</p>
+          <div class="button-row"><a class="button" href="#card-draw">Вытянуть карту <span>↓</span></a><a class="button button-ghost" href="#full-deck">Хочу полную колоду</a></div>
+          <p class="gentle-note"><span aria-hidden="true">—</span> Это не про «исправить себя». Это про услышать себя.</p>
+        </div>
+        <figure class="hero-visual product-photo product-photo-hero reveal">
+          <img src="images/bud-s-soboy-product-closeup.png" alt="Физическая колода «Будь с собой»: коробка, стопка карт и открытая карта" width="1122" height="1402" fetchpriority="high">
+          <figcaption><span>60 карт</span> для бережного контакта с собой</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="draw-section" id="card-draw" aria-labelledby="draw-title">
+      <div class="container draw-container">
+        <div class="section-heading reveal"><p class="eyebrow centered"><span></span> Минута для себя <span></span></p><h2 id="draw-title">Вытянуть карту</h2><p>Перед тем как открыть карту, сделайте один спокойный вдох и спросите себя: <strong>что мне сейчас важно услышать?</strong></p></div>
+
+        <div class="draw-stage reveal">
+          <div class="interactive-card" id="interactive-card" aria-live="polite">
+            <div class="card-inner">
+              <button class="card-face card-back" id="card-back" type="button" aria-label="Вытянуть карту">
+                <img
+                  src="images/bud-s-soboy-cover.jpg"
+                  alt="Титульная обложка колоды Будь с собой"
+                  class="real-card-cover"
+                >
+                <span class="back-hint">нажмите, чтобы вытянуть карту</span>
+              </button>
+              <article class="card-face card-front" id="card-front" aria-label="Открытая карта">
+                <span class="card-number" id="card-number">01</span><p class="card-type" id="card-type">Карта саморефлексии</p><span class="card-divider">✦</span><h3 id="card-phrase">Ты можешь не знать ответа.</h3><p class="card-prompt" id="card-prompt">Где ты уже всё понимаешь, но не решаешься признать?</p><p class="card-practice" id="card-practice" hidden></p><p class="card-reflection">Контакт важнее контроля</p>
+              </article>
+            </div>
+          </div>
+          <button class="button draw-button" id="draw-button" type="button">Вытянуть карту <span>✦</span></button>
+          <p class="draw-count" id="draw-count">Сегодня открыто: 0 из 3</p>
+          <div class="after-draw" id="after-draw" hidden>
+            <button class="text-action" id="draw-again" type="button">Вытянуть ещё карту <span>→</span></button>
+            <a class="text-action" data-wa="deck" href="#">Хочу полную колоду <span>→</span></a>
+            <a class="text-action" data-wa="meeting" href="#">Хочу встречу с колодой <span>→</span></a>
+            <a class="text-action" data-wa="write" href="#">Написать Диане <span>→</span></a>
+          </div>
+          <div class="limit-message" id="limit-message" hidden><span aria-hidden="true">✦</span><h3>На сегодня достаточно</h3><p>Иногда одной честной встречи с собой уже много. Вы можете вернуться завтра или познакомиться с полной колодой.</p><div class="button-row centered-row"><a class="button" data-wa="deck" href="#">Хочу полную колоду</a><a class="button button-ghost" data-wa="write" href="#">Написать Диане</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="inside section" id="about" aria-labelledby="inside-title">
+      <div class="container">
+        <div class="section-heading left reveal"><p class="eyebrow"><span></span> Внутри колоды</p><h2 id="inside-title">60 способов мягко<br>вернуться к себе</h2><p>60 карт терапевтического сопровождения: мягкие фразы, честные вопросы и практики, которые дают опору.</p></div>
+        <div class="feature-grid">
+          <article class="feature-card reveal"><span class="feature-num">60</span><div class="feature-icon">◯</div><h3>Карт сопровождения</h3><p>Бережный способ заметить своё состояние и вернуться к внутренней опоре.</p></article>
+          <article class="feature-card feature-accent reveal"><span class="feature-num">“ ”</span><div class="feature-icon">↝</div><h3>Мягкие фразы</h3><p>Слова поддержки, которые помогают быть на своей стороне.</p></article>
+          <article class="feature-card reveal"><span class="feature-num">?</span><div class="feature-icon">⌁</div><h3>Честные вопросы</h3><p>Вопросы, которые помогают услышать себя без давления и спешки.</p></article>
+          <article class="feature-card reveal"><span class="feature-num">↙</span><div class="feature-icon">✦</div><h3>Практики с опорой</h3><p>Короткие действия через дыхание и тело, возвращающие контакт с собой.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how section" id="how" aria-labelledby="how-title">
+      <div class="container how-grid">
+        <div class="how-intro reveal"><p class="eyebrow"><span></span> Вкладыш-инструкция</p><h2 id="how-title">Как работать с колодой</h2><p>Это не про поиск правильных ответов. Это про контакт с собой.</p><blockquote class="deck-principle"><span>Главный принцип колоды</span>Не ломать себя. А мягко возвращаться к себе.</blockquote><div class="mini-card-art" aria-hidden="true"><span>Будь<br>с собой</span><i>✦</i></div></div>
+        <ol class="steps">
+          <li class="reveal"><span>01</span><div><h3>Быстрый контакт с собой</h3><p>Сформулируйте внутренний запрос или просто спросите: что мне важно увидеть сегодня?</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>Честный разговор с собой</h3><p>Выберите 1–3 карты и запишите ответы: эмоции, телесные ощущения, внутренние реакции.</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>Через тело</h3><p>Если карта содержит практику — не пропускайте её. Иногда опора возвращается не через анализ, а через тело.</p></div></li>
+          <li class="reveal"><span>04</span><div><h3>В терапии или работе с клиентами</h3><p>Карту можно использовать как вход в сессию, углубление или мягкое завершение.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="for-whom section" aria-labelledby="for-title">
+      <div class="container for-grid">
+        <div class="for-panel reveal"><p class="eyebrow"><span></span> Возможно, это для вас</p><h2 id="for-title">Для кого эта колода</h2><p>Для тех моментов, когда хочется чуть меньше шума снаружи и чуть больше ясности внутри.</p></div>
+        <ul class="check-list reveal"><li>если вы часто теряете контакт с собой</li><li>если сложно понять, что вы чувствуете</li><li>если внутри много напряжения и контроля</li><li>если хочется больше опоры и мягкости</li><li>если вы проходите период перемен</li><li>если нужен бережный способ возвращаться к себе</li><li>если вам близки мягкие фразы, честные вопросы и практики с опорой</li></ul>
+      </div>
+    </section>
+
+    <section class="full-deck section" id="full-deck" aria-labelledby="deck-title">
+      <div class="container deck-offer">
+        <figure class="offer-visual product-photo product-photo-set reveal"><img src="images/bud-s-soboy-product-set.png" alt="Полная колода «Будь с собой» с коробкой и открытыми картами" width="1122" height="1402" loading="lazy"><figcaption>Физическая колода «Будь с собой»</figcaption></figure>
+        <div class="offer-copy reveal"><p class="eyebrow"><span></span> Полная версия</p><h2 id="deck-title">Полная колода<br><em>«Будь с собой»</em></h2><p>60 карт терапевтического сопровождения: мягкие фразы, честные вопросы и практики, которые дают опору.</p><p class="offer-mantra">Вытяни одну карту. И начни с себя.</p><ul class="offer-list"><li><b>60</b> карт терапевтического сопровождения</li><li>Мягкие фразы поддержки</li><li>Честные вопросы к себе</li><li>Практики, которые дают опору</li><li>Доставка по Казахстану и в другие страны</li></ul><div class="prices"><div><span>Полная колода</span><strong>45 000 ₸</strong></div><div><span>Колода + 7 дней сопровождения</span><strong>60 000 ₸</strong></div></div><div class="button-stack"><a class="button" data-wa="deck" href="#">Хочу полную колоду</a><a class="button button-ghost" data-wa="support" href="#">Колода + сопровождение</a><a class="plain-link" data-wa="question" href="#">Задать вопрос <span>→</span></a></div></div>
+      </div>
+    </section>
+
+    <section class="meeting section" aria-labelledby="meeting-title">
+      <div class="container meeting-card reveal">
+        <div><p class="eyebrow light"><span></span> Индивидуальный формат</p><h2 id="meeting-title">Встреча с колодой</h2><p>Если вы хотите не просто открыть карту, а глубже разобраться в своём состоянии или запросе, можно прийти на индивидуальную встречу. Через карту мы мягко выходим к тому, что сейчас важно увидеть, назвать и поддержать.</p></div>
+        <div class="meeting-meta"><div><span>Формат</span><strong>90 минут</strong></div><div><span>Стоимость</span><strong>30 000 ₸</strong></div><a class="button button-light" data-wa="meeting" href="#">Хочу встречу с колодой</a></div>
+      </div>
+    </section>
+
+    <section class="final-cta section" id="contacts" aria-labelledby="final-title">
+      <div class="container final-inner reveal"><span class="large-spark">✦</span><p class="eyebrow centered"><span></span> Вернуться к себе <span></span></p><h2 id="final-title">Иногда одна карта становится началом честного разговора с собой</h2><p>Откройте карту, прислушайтесь к отклику — и если почувствуете, что хотите глубже, напишите Диане.</p><div class="button-row centered-row"><a class="button" href="#card-draw">Вытянуть карту</a><a class="button button-ghost" data-wa="write" href="#">Написать Диане</a></div></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid"><a class="brand footer-brand" href="#top"><span class="brand-mark">Б</span><span><strong>Будь с собой</strong><small>авторская колода Дианы Ким</small></span></a><nav aria-label="Навигация в подвале"><a href="#about">О колоде</a><a href="#card-draw">Вытянуть карту</a><a href="#full-deck">Полная колода</a><a href="#contacts">Контакты</a></nav><p>Интерактивная страница авторской колоды Дианы Ким.<br>© <span id="year"></span></p></div>
+  </footer>
+</body>
+</html>
